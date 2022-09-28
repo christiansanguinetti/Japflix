@@ -21,10 +21,7 @@ function buscar(arr){
         contenedor.innerHTML += `<div><p style="color: white;">${peli.title}</p></div>`;
         console.log(peli.title);
         }}}}
-       // busqueda.value.toLowerCase().includes(peli.title.toLowerCase()) 
-    //    || 
-    //   busqueda.value.toLowerCase().includes(peli.tagline.toLowerCase()) ||
-    //   busqueda.value.toLowerCase().includes(peli. overview.toLowerCase())
+    
      
     //              for (let genero of peli.genres) {
     //                 if(genero.name.toLowerCase() == busqueda.value.toLowerCase()){
