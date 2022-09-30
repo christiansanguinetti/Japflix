@@ -13,6 +13,12 @@ function cargar(arr) {
 //let genresArray = movie.genres
 //for (const genre of genresArray) {
 //   peli_genero += JSON.stringify(genre.name);}
+function setPeliID(id) {
+    localStorage.setItem("PeliID", id);
+    let idDePeli = localStorage.getItem('PeliID');
+    console.log(idDePeli);
+  }
+  
 
 
 function buscar(arr) {
@@ -26,6 +32,25 @@ function buscar(arr) {
             ) {
                 contenedor.innerHTML += `<br> <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><div style="color: white;" onClick ="id(peli)">${peli.title} ${showStars(peli.vote_average/2)} </h4> <p style="color: white;">${peli.tagline}</p></div></button>
 
+                <div  class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                  <div class="offcanvas-header">
+                    <div> <h5 class="offcanvas-title" id="offcanvasTopLabel">${peli.title}</h5> </div> <br>
+                    <div><p>${peli.overview}</p> </div>
+                    
+                    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Ver detalles
+  </button>
+  <ul class="dropdown-menu dropdown-menu-dark ">
+    <li><a class="dropdown-item" href="#">Año: ${peli.release_date}</a></li>
+    <li><a class="dropdown-item" href="#">Duración: ${peli.runtime} minutos</a></li>
+    <li><a class="dropdown-item" href="#">Presupuesto: $ ${peli.budget}</a></li>
+    <li><a class="dropdown-item" href="#">Ganancias: $ ${peli.revenue}</a></li>
+  </ul>
+  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+                  </div>
+                </div>
                 `;
                 console.log(peli.title);
             }
